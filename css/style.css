@@ -1,0 +1,310 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  color: #3C2F2F;
+  background: #FAF6F0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* MENU */
+.menu-bg {
+  background: #7A4E36; /* fundo marrom escuro */
+}
+
+.menu {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-logo a {
+  font-size: 2em;
+  font-weight: 700;
+  color: #FAF6F0;
+}
+
+.menu-nav ul {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu-nav a {
+  font-size: 1.1em;
+  padding: 8px 10px;
+  color: #FAF6F0; /* links claros para contraste */
+  transition: color 0.3s;
+}
+
+.menu-nav a:hover {
+  color: #FFDAB9; /* hover mais visível */
+}
+
+/* Introdução */
+.introducao {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+  color: #7A4E36;
+}
+
+/* Sobre */
+.sobre {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 4px solid #C47C54;
+  border-bottom: 4px solid #C47C54;
+}
+
+.sobre-info {
+  flex: 2 1 400px;
+  color: #3C2F2F;
+}
+
+.sobre-info h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  margin-bottom: 20px;
+  color: #7A4E36;
+}
+
+.sobre-info p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.sobre-img {
+  flex: 1 1 250px;
+}
+
+/* Produtos */
+.produtos {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.produtos h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 40px;
+  color: #7A4E36;
+}
+
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.produtos-item {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #E8D3B9;
+}
+
+.produtos-item h2 {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 20px;
+  color: #3C2F2F;
+  background: #FAF6F0;
+  width: 100%;
+}
+
+.massagem { border-top: 6px solid #C47C54; }
+.aromaterapia { border-top: 6px solid #E8D3B9; }
+.limpeza { border-top: 6px solid #8A9A5B; }
+
+/* Preço */
+.preco {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.preco-item {
+  flex: 1 1 300px;
+  background: #FAF6F0;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.preco-item h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #7A4E36;
+}
+
+.preco-item span {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #3C2F2F;
+}
+
+.preco-item ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  color: #3C2F2F;
+}
+
+.preco-item li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.preco-item li::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #C47C54;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.preco-item a {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #C47C54;
+  color: #FAF6F0;
+  font-weight: 700;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.preco-item a:hover {
+  background: #7A4E36;
+}
+
+/* Newsletter */
+.newsletter {
+  background: #E8D3B9;
+  padding: 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.newsletter-info {
+  flex: 1 1 300px;
+}
+
+.newsletter-info h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #7A4E36;
+}
+
+.newsletter-info p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.newsletter-form {
+  flex: 1 1 300px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  flex: 2 1 200px;
+  padding: 12px;
+  border: 2px solid #7A4E36;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.newsletter-form button {
+  flex: 1 1 100px;
+  padding: 12px;
+  background: #C47C54;
+  border: none;
+  color: #FAF6F0;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background: #7A4E36;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 30px 20px;
+  background: #7A4E36;
+  color: #FAF6F0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .sobre { flex-direction: column; align-items: center; }
+  .produtos-container, .preco { flex-direction: column; align-items: center; }
+  .newsletter { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 600px) {
+  .menu-nav ul { flex-direction: column; gap: 10px; align-items: center; }
+  .introducao { font-size: 2rem; padding: 20px; }
+  .newsletter-form { flex-direction: column; }
+}
