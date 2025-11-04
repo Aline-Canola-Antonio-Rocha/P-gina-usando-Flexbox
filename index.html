@@ -165,34 +165,71 @@
   </div>
 
   <!-- SCRIPT -->
-  <script>
-    const loginBtn = document.getElementById('loginBtn');
-    const modal = document.getElementById('authModal');
-    const showRegister = document.getElementById('showRegister');
-    const showLogin = document.getElementById('showLogin');
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-    const saveRegister = document.getElementById('saveRegister');
+<script>
+  const loginBtn = document.getElementById('loginBtn');
+  const modal = document.getElementById('authModal');
+  const showRegister = document.getElementById('showRegister');
+  const showLogin = document.getElementById('showLogin');
+  const loginForm = document.getElementById('loginForm');
+  const registerForm = document.getElementById('registerForm');
+  const saveRegister = document.getElementById('saveRegister');
 
-    loginBtn.onclick = () => modal.style.display = 'flex';
-    showRegister.onclick = () => {
-      loginForm.style.display = 'none';
-      registerForm.style.display = 'block';
-    };
-    showLogin.onclick = () => {
-      registerForm.style.display = 'none';
-      loginForm.style.display = 'block';
-    };
-    saveRegister.onclick = (e) => {
-      e.preventDefault();
-      alert("Cadastro realizado com sucesso!");
-      registerForm.style.display = 'none';
-      loginForm.style.display = 'block';
-    };
-    window.onclick = (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    };
-  </script>
+  // Abre modal
+  loginBtn.onclick = () => modal.style.display = 'flex';
+
+  // Alterna entre login e cadastro
+  showRegister.onclick = () => {
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'block';
+  };
+  showLogin.onclick = () => {
+    registerForm.style.display = 'none';
+    loginForm.style.display = 'block';
+  };
+
+  // --- Cadastro ---
+  saveRegister.onclick = (e) => {
+    e.preventDefault();
+    const name = registerForm.querySelector('input[placeholder="Nome completo"]').value;
+    const email = registerForm.querySelector('input[placeholder="E-mail"]').value;
+    const password = registerForm.querySelector('input[placeholder="Senha"]').value;
+
+    if (!name || !email || !password) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+
+    // Salva usuário no localStorage
+    const user = { name, email, password };
+    localStorage.setItem('user', JSON.stringify(user));
+    alert("Cadastro realizado com sucesso!");
+
+    // Volta para login
+    registerForm.style.display = 'none';
+    loginForm.style.display = 'block';
+  };
+
+  // --- Login ---
+loginForm.querySelector('form').onsubmit = (e) => {
+    e.preventDefault();
+    const email = loginForm.querySelector('input[type="email"]').value;
+    const password = loginForm.querySelector('input[type="password"]').value;
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user && user.email === email && user.password === password) {
+        localStorage.setItem('loggedUser', email);
+        window.location.href = 'dashboard.html'; // redireciona para o painel
+    } else {
+        alert('E-mail ou senha incorretos!');
+    }
+};
+
+// Fecha modal clicando fora
+window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+};
+
+</script>
 
 </body>
 </html>
